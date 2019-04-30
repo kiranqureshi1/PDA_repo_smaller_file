@@ -44,7 +44,7 @@ describe('calculator', function () {
     assert.strictEqual(actual, expected);
   });
 
-   it(‘it should concatenate multiple number button clicks’, function(){
+   it('it should concatenate multiple number button clicks', function(){
      calculator.numberClick(1);
      calculator.numberClick(2);
      calculator.numberClick(2);
@@ -54,23 +54,23 @@ describe('calculator', function () {
      assert.strictEqual(actual, expected);
    });
 
-   it(‘it should chain multiple operations together’, function(){
+   it('it should chain multiple operations together', function(){
      calculator.numberClick(3);
-     calculator.operatorClick(“+”);
+     calculator.operatorClick("+");
      calculator.numberClick(7);
-     calculator.operatorClick(“*”);
+     calculator.operatorClick("*");
      calculator.numberClick(3);
-     calculator.operatorClick(“=”);
+     calculator.operatorClick("=");
      const actual = calculator.runningTotal;
      const expected = 30;
      assert.strictEqual(actual, expected);
    });
 
-   it(‘it should clear the running total without affecting the calculation’, function(){
+   it('it should clear the running total without affecting the calculation', function(){
      calculator.numberClick(7);
-     calculator.operatorClick(“*”);
+     calculator.operatorClick("*");
      calculator.numberClick(2);
-     calculator.operatorClick(“+”);
+     calculator.operatorClick("+");
      calculator.numberClick(2);
      calculator.clearClick();
      const actual = calculator.previousTotal;

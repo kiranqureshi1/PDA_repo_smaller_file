@@ -1,3 +1,4 @@
+
 var Calculator = function(){
   this.previousOperator = null; // the last operator the user clicked
   this.previousTotal = 0;       // the total of the previous operation
@@ -20,7 +21,11 @@ Calculator.prototype = {
   },
 
   divide: function(number){
-    this.runningTotal = parseFloat(this.previousTotal) / parseFloat(number);
+    if (parseFloat(number) === 0){
+      this.runningTotal = 'NaN';
+    }else{
+    this.runningTotal = parseFloat(this.previousTotal) / parseFloat(number)}
+
   },
 
   numberClick: function(number) {
